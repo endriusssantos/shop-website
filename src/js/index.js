@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Seleciona os elementos do carrinho
     const sizeButtons = document.querySelectorAll(".sizes button");
     const increaseBtn = document.getElementById("increase");
     const decreaseBtn = document.getElementById("decrease");
@@ -11,17 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeCartBtn = document.getElementById("close-cart");
     const cartItemsContainer = document.getElementById("cart-items");
   
-    let cartItems = []; // Array para armazenar os itens do carrinho
+    let cartItems = []; 
   
-    // Função para abrir/fechar o carrinho
     function toggleCartSidebar() {
-      cartSidebar.classList.toggle("hidden");  // Alterna a classe hidden
-      console.log(cartSidebar.classList); // Depuração: para verificar se a classe foi alternada
+      cartSidebar.classList.toggle("hidden");
+      console.log(cartSidebar.classList);
     }
-  
-    // Atualiza o conteúdo da sidebar com os itens do carrinho
+
     function updateCartSidebar() {
-      cartItemsContainer.innerHTML = ""; // Limpa a lista
+      cartItemsContainer.innerHTML = ""; 
       if (cartItems.length === 0) {
         cartItemsContainer.innerHTML = "<li>O carrinho está vazio!</li>";
         return;
@@ -33,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   
-    // Botões de aumentar e diminuir quantidade
     increaseBtn.addEventListener("click", () => {
       let quantity = parseInt(quantityElement.textContent, 10);
       quantity += 1;
@@ -48,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   
-    // Adiciona itens ao carrinho
     addToCartBtn.addEventListener("click", () => {
       const selectedSize = document.querySelector(".sizes button.selected");
       const quantity = parseInt(quantityElement.textContent, 10);
@@ -63,30 +58,24 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
   
-      // Adiciona o item ao array do carrinho
       cartItems.push({ size: selectedSize.textContent, quantity });
   
-      // Atualiza o contador no ícone do carrinho
       cartIcon.textContent = ` (${cartItems.length})`;
   
-      // Limpa a quantidade para o próximo item
       quantityElement.textContent = "0";
   
       alert("Item adicionado ao carrinho!");
     });
   
-    // Abrir o carrinho ao clicar no ícone
     cartButton.addEventListener("click", () => {
       updateCartSidebar();
-      toggleCartSidebar(); // Chama a função para alternar a visibilidade
+      toggleCartSidebar();
     });
   
-    // Fechar o carrinho
     closeCartBtn.addEventListener("click", () => {
-      toggleCartSidebar(); // Alterna a visibilidade para fechar o carrinho
+      toggleCartSidebar();
     });
   
-    // Selecionar o tamanho
     sizeButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
         sizeButtons.forEach((b) => b.classList.remove("selected"));
@@ -94,6 +83,5 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   
-    // Depuração dos elementos
     console.log(cartButton, cartIcon, cartSidebar, closeCartBtn);
   });
