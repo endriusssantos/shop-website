@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Website</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/responsive.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <h2 class="name-site"><a href="#">shop</a></h2>
+        <ul class="menu">
+            <li class="item"><a href="#">my account</a></li>
+            <li class="item"><button class="btn-search">search</button></li>
+            <li class="item"><button id="btn-cart"><i class="fa-solid fa-cart-shopping"></i></button></li>
+        </ul>
+    </header>
+    <!-- Sidebar do Carrinho -->
+    <div id="cart-sidebar" class="cart-sidebar hidden">
+        <div class="cart-header">
+            <h2>Meu Carrinho</h2>
+            <button id="close-cart">X</button>
+        </div>
+        <div class="cart-content">
+            <ul id="cart-items">
+                <!-- Os itens do carrinho serão inseridos aqui -->
+            </ul>
+        </div>
+    </div>
+
+    <main class="content">
+        <ul class="categories">
+            <li class="category"><a href="#">women</a></li>
+            <li class="category"><a href="#">men</a></li>
+            <li class="category"><a href="#">shoes</a></li>
+            <li class="category"><a href="#">brand</a></li>
+        </ul>
+        <div class="btn-prev"><a href="#"><i class="fa-solid fa-arrow-left"></i>prev</a></div>
+        <div class="product">
+            <h1 class="name">brand sweatshirt</h1>
+            <p class="value">$1000</p>
+        </div>
+        <div class="btn-next"><a href="#">next <i class="fa-solid fa-arrow-right"></i></a></div>
+        <div class="infos-container">
+            <ul class="sizes">
+                <li><button>S</button></li>
+                <li><button>M</button></li>
+                <li><button>L</button></li>
+            </ul>
+            <div class="quantity">
+                <button id="decrease"><i class="fa-solid fa-minus"></i></button>
+                <span id="quantity">0</span>
+                <button id="increase"><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <button class="btn-add">add to cart</button>
+        </div>
+    </main>
+    <footer class="main-footer">
+        <div class="social">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-solid fa-x"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+    </footer>
+
+    <script src="./src/js/index.js"></script>
+</body>
+
+</html>
